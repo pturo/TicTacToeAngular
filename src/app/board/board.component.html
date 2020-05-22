@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="game game-info">
+    <h1>Welcome to Tic-Tac-Toe. Have fun!</h1>
+    <h2>Current Player: {{ player }}</h2>
+    <button type="button" class="btn btn-info" (click)="newGame()">Start new game</button>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading" *ngIf="playing">Game status: {{ playing }}
+      <p *ngIf="winner">Player {{ winner }} won the game!</p>
+    </div>
+    <div class="panel-body">
+      <main>
+        <app-square *ngFor="let sqr of squares; let i = index;" [value]="sqr" (click)="makeMove(i)">
+
+        </app-square>
+      </main>
+    </div>
+  </div>
+</div>
